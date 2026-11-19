@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrays and Array Methods</title>
+</head>
+<body>
+
+    <h1>Arrays and Array Methods</h1>
+
+    <script>
+
+        // Creating an Array
+        let fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+        console.log("Original Array:", fruits);
+
+        // Accessing Array Elements
+        console.log("First Fruit:", fruits[0]);
+
+        // Array Length
+        console.log("Array Length:", fruits.length);
+
+        // Push Method
+        fruits.push("Grapes");
+        console.log("After Push:", fruits);
+
+        // Pop Method
+        fruits.pop();
+        console.log("After Pop:", fruits);
+
+        // Unshift Method
+        fruits.unshift("Pineapple");
+        console.log("After Unshift:", fruits);
+
+        // Shift Method
+        fruits.shift();
+        console.log("After Shift:", fruits);
+
+        // ForEach Method
+        fruits.forEach(function(fruit) {
+            console.log(fruit);
+        });
+
+        // Map Method
+        let numbers = [1, 2, 3, 4, 5];
+
+        let double = numbers.map(function(num) {
+            return num * 2;
+        });
+
+        console.log("Doubled Array:", double);
+
+        // Filter Method
+        let even = numbers.filter(function(num) {
+            return num % 2 === 0;
+        });
+
+        console.log("Even Numbers:", even);
+
+    </script>
+
+</body>
+</html>
