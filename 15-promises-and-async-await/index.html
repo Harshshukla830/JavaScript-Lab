@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promises and Async Await</title>
+</head>
+<body>
+
+    <h1>Promises and Async Await</h1>
+
+    <script>
+
+        // 1. Creating a Promise
+        let myPromise = new Promise(function(resolve, reject) {
+
+            let success = true;
+
+            if (success) {
+                resolve("Promise Resolved Successfully!");
+            } else {
+                reject("Promise Rejected!");
+            }
+
+        });
+
+        // 2. Using then() and catch()
+        myPromise
+            .then(function(result) {
+                console.log(result);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+
+        // 3. Promise with setTimeout
+        function getData() {
+            return new Promise(function(resolve) {
+
+                setTimeout(function() {
+                    resolve("Data Received Successfully!");
+                }, 2000);
+
+            });
+        }
+
+        getData().then(function(data) {
+            console.log(data);
+        });
+
+        // 4. Async Function
+        async function showMessage() {
+            return "Hello from Async Function!";
+        }
+
+        showMessage().then(function(message) {
+            console.log(message);
+        });
+
+        // 5. Async and Await
+        async function displayData() {
+
+            let result = await getData();
+
+            console.log("Async Await:", result);
+
+        }
+
+        displayData();
+
+        // 6. Error Handling
+        async function handleError() {
+
+            try {
+                let result = await myPromise;
+                console.log("Success:", result);
+
+            } catch (error) {
+                console.log("Error:", error);
+            }
+
+        }
+
+        handleError();
+
+    </script>
+
+</body>
+</html>
